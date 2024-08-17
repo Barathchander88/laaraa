@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            margin-bottom: 40px;
+            width: 200px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            color: #34495e;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section h2::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            width: 50px;
+            height: 4px;
+            background: #3498db;
+            transform: translateX(-50%);
+        }
+
+        .section-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon {
+            font-size: 50px;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #7f8c8d;
+        }
+
+        .bg-section {
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            color: #2c3e50;
+        }
+
+        .bg-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .bg-section:hover::before {
+            opacity: 1;
+        }
+
+        .bg-section h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .bg-section p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Center the Logistics card */
+        .center-card {
+            display: flex;
+            justify-content: center;
+        }
+
+        .center-card .card {
+            max-width: 600px;
+            flex: 1;
+        }
+
+
+
+
+        /*product development*/
+     
+        .facilities-section {
+            width: 80%;
+            max-width: 1200px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 40px;
+        }
+
+        .facilities-section h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #333333;
+            margin-bottom: 40px;
+        }
+        
+        .facilities-nav {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .facilities-nav a {
+            margin: 0 15px;
+            font-size: 22px;
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .facilities-nav a:hover {
+            color: #0056b3;
+        }
+
+        .facility-item {
+            display: none;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .facility-item.active {
+            display: flex;
+        }
+
+        .facility-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .facility-image {
+            flex: 1;
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .facility-item:nth-child(even) .facility-image {
+            margin-right: 0;
+            margin-left: 20px;
+        }
+
+        .facility-content {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .facility-content h2 {
+            font-size: 28px;
+            color: #444444;
+            margin-bottom: 15px;
+        }
+
+        .facility-content p {
+            font-size: 18px;
+            color: #666666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+/* our facilities*/
+
+/*
+.facilities-section {
+   /* width: 80%;*/
+    /*max-width: 1200px;*/
+   /* margin: 50px auto;*/
+   /* background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;*/
+    /*padding: 40px;*/
+
+
+.facilities-section h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #333333;
+    margin-bottom: 40px;
+}
+
+.facilities-nav {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.facilities-nav a {
+    margin: 0 15px;
+    font-size: 22px;
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.facilities-nav a:hover {
+    color: red;
+}
+
+.facilities-nav a.selected {
+    color:red;
+    font-weight: bold;
+}
+
+.facility-item {
+    display: none;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.facility-item.active {
+    display: flex;
+}
+
+.facility-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.facility-image {
+    flex: 1;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.facility-item:nth-child(even) .facility-image {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.facility-content {
+    flex: 2;
+    padding: 20px;
+}
+
+.facility-content h2 {
+    font-size: 28px;
+    color: #444444;
+    margin-bottom: 15px;
+}
+
+.facility-content p {
+    font-size: 18px;
+    color: #666666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/*inspection process*/
+.ip {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.inspection-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 10px auto;
+    /*background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);*/
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.inspection-section h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #333333;
+    margin-bottom: 30px;
+}
+
+.subtopic {
+    margin-bottom: 30px;
+}
+
+.subtopic h2 {
+    font-size: 28px;
+    color: #444444;
+    margin-bottom: 15px;
+}
+
+.subtopic p {
+    font-size: 18px;
+    color: #666666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.images-section {
+    margin-top: 50px;
+}
+
+.images-section h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #444444;
+    margin-bottom: 30px;
+}
+
+.images-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.images-gallery img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.images-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .inspection-section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .inspection-section h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .subtopic h2 {
+        font-size: 24px;
+    }
+
+    .subtopic p {
+        font-size: 16px;
+    }
+
+    .images-gallery img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .inspection-section {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .inspection-section h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .subtopic h2 {
+        font-size: 20px;
+    }
+
+    .subtopic p {
+        font-size: 14px;
+    }
+
+    .images-gallery {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .images-gallery img {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+/* design and development ,quality assurance*/
+
+.service-section {
+    width: 80%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px;
+   /* background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);*/
+    border-radius: 10px;
+}
+
+.service-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 20px;
+   /* background-color: #e0f0ff;*/
+    border-radius: 10px;
+}
+
+.service-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.service-image {
+    flex: 1;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.service-item:nth-child(even) .service-image {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.service-content {
+    flex: 2;
+    padding: 20px;
+}
+
+.service-content h2 {
+    font-size: 28px;
+    color: #444444;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.service-content p {
+    font-size: 18px;
+    color: #666666;
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+}
+
+.service-item:hover {
+   /* background-color: #d1eaff;*/
+    transition: background-color 0.3s ease;
+}
+
+    </style>
+
+    
+    <script>
+        function showFacility(id) {
+            // Hide all facilities
+            const facilities = document.querySelectorAll('.facility-item');
+            facilities.forEach(facility => facility.classList.remove('active'));
+            
+            // Show the selected facility
+            document.getElementById(id).classList.add('active');
+
+            // Remove 'selected' class from all links
+            const links = document.querySelectorAll('.facilities-nav a');
+            links.forEach(link => link.classList.remove('selected'));
+
+            // Add 'selected' class to the clicked link
+            event.target.classList.add('selected');
+        }
+    </script>
+</head>
+<body>
+    <img src="logo.png" alt="Company Logo" class="logo">
+
+    <div class="section-container">
+        <h1>Our Services</h1>
+
+        <div class="section">
+            <h2>Interactive Services</h2>
+            <div class="section-content">
+                <div class="card">
+                    <div class="icon">🎨</div>
+                    <h3>Design Services</h3>
+                    <p>Creative solutions made to fit your particular requirements, turning concepts into powerful designs.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🧵</div>
+                    <h3>Fabric R&D</h3>
+                    <p>State-of-the-art research and development on textiles to make sure you maintain your lead in terms of trends and quality.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">💻</div>
+                    <h3>Technological Services</h3>
+                    <p>Professional assistance and technological know-how to streamline procedures and resolve challenging issues.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">✔️</div>
+                    <h3>Quality Control</h3>
+                    <p>Strict quality assurance procedures that ensure products are up to the highest standards.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section center-card">
+           
+            <div class="card">
+                <h2>Logistics</h2>
+                <div class="icon">🚚</div>
+               
+                <p>Streamline your supply chain and improve delivery performance with effective and dependable logistics solutions.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>What We Offer</h2>
+            <div class="section-content">
+                <div class="card">
+                    <div class="icon">💰</div>
+                    <h3>Competitive Price</h3>
+                    <p>Utilize our strategic pricing, which guarantees you receive the most return on your investment.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">⏳</div>
+                    <h3>Minimal Lead Times</h3>
+                    <p>Reduced lead time can streamline operations and improve productivity, increasing output and revenue.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🔄</div>
+                    <h3>Flexible Volume</h3>
+                    <p>Modifiable order quantities to satisfy the changing market demands as per the individual needs.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🤖</div>
+                    <h3>Virtual Manufacturer</h3>
+                    <p>With the use of automation technologies, the time taken to design the products is substantially shortened.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🌍</div>
+                    <h3>Ocean of Compliances</h3>
+                    <p>We make sure that each product satisfies a variety of legal and qualitative requirements.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🛡️</div>
+                    <h3>Comfort in Thought</h3>
+                    <p>Our dependable and trustworthy services prioritize your satisfaction and give you total assurance.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <section class="service-section">
+            <div class="service-item">
+                <img src="DD.jpg" alt="Design & Development" class="service-image">
+                <div class="service-content">
+                    <h2>Design & Development</h2>
+                    <p>We take great pride in creating customized size specification charts, exact patterns, and leading fit sessions to ensure quick and accurate product manufacturing.</p>
+                </div>
+            </div>
+    
+            <div class="service-item">
+                <img src="QA.jpg" alt="Quality Assurance" class="service-image">
+                <div class="service-content">
+                    <h2>Quality Assurance</h2>
+                    <p>At Laarraa, we're committed to meeting high standards with frequent in-line inspections and comprehensive inspections at all stages, from raw material assessment to final product evaluation.</p>
+                </div>
+            </div>
+    
+            <div class="service-item">
+                <img src="TM.jpg" alt="Time Management" class="service-image">
+                <div class="service-content">
+                    <h2>Time Management</h2>
+                    <p>We assist producers in enhancing quality control procedures with impartial oversight and rapid remedial action on the manufacturing floor to ensure on-time delivery and adherence to quality requirements.</p>
+                </div>
+            </div>
+    
+            <div class="service-item">
+                <img src="Logistics.jpg" alt="Logistics Support" class="service-image">
+                <div class="service-content">
+                    <h2>Logistics Support</h2>
+                    <p>Our logistics department organizes legal paperwork and keeps communication open with airlines and shipping firms, emphasizing accurate documentation and continuous shipment tracking.</p>
+                </div>
+            </div>
+        </section>
+         <!-- <div class="section">
+            <h2>With BG</h2>
+
+            <div class="bg-section">
+                <h3>Design & Development</h3>
+                <p>We take great pride in creating customized size specification charts, exact patterns, and leading fit sessions to ensure quick and accurate product manufacturing.</p>
+            </div>
+
+            <div class="bg-section">
+                <h3>Quality Assurance</h3>
+                <p>At Laaraa, we're committed to meeting high standards with frequent in-line inspections and comprehensive inspections at all stages, from raw material assessment to final product evaluation.</p>
+            </div>
+
+            <div class="bg-section">
+                <h3>Time Management</h3>
+                <p>We assist producers in enhancing quality control procedures with impartial oversight and rapid remedial action on the manufacturing floor to ensure on-time delivery and adherence to quality requirements.</p>
+            </div>
+
+            <div class="bg-section"> 
+                <h3>Logistics Support</h3> 
+                <p>Our logistics department organizes legal paperwork and keeps communication open with airlines and shipping firms, emphasizing accurate documentation and continuous shipment tracking.</p> -->
+            <!-- </div>  -->
+        <!-- </div>-->
+
+            <!-- Facility sections -->
+            <!-- <section class="facilities-section"> -->
+                <h1>Our Facilities</h1>
+        
+                <!-- Navigation links for the sub-topics -->
+                <div class="facilities-nav">
+                    <a onclick="showFacility('laboratories')">Laboratories</a>
+                    <a onclick="showFacility('quality')">Ensuring Quality</a>
+                    <!-- <a onclick="showFacility('certifications')">Factory Certifications</a>
+                    <a onclick="showFacility('inspection')">Inspection</a> -->
+                </div>
+        
+                <!-- Facility sections -->
+                <div id="laboratories" class="facility-item active">
+                    <img src="lab.jpg" alt="Laboratories" class="facility-image">
+                    <div class="facility-content">
+                        <h2>Laboratories</h2>
+                        <p>Our sophisticated in-house testing lab performs various tests, including color fastness, fiber content, flammability, and more to ensure defect-free products.</p>
+                    </div>
+                </div>
+        
+                <div id="quality" class="facility-item">
+                    <img src="quality1.jpg" alt="Ensuring Quality" class="facility-image">
+                    <div class="facility-content">
+                        <h2>Ensuring Quality</h2>
+                        <p>Our SOP for Quality Control guarantees that all merchandise meets client standards, ensuring high-quality products.</p>
+                    </div>
+                </div>
+        
+              
+            <!-- xxxxx -->
+
+
+<div class="ip">
+    <section class="inspection-section">
+        <h1>Our Inspection Process</h1>
+
+        <div class="subtopic">
+            <h2>Pilot Run Inspection</h2>
+            <p>We perform an initial inspection during the pilot run to ensure the product meets all specifications. This step helps identify any potential issues early in the production process.</p>
+        </div>
+
+        <div class="subtopic">
+            <h2>In-Line Inspection</h2>
+            <p>Our in-line inspection occurs during the manufacturing process. We check for defects and inconsistencies in real-time, ensuring that any issues are addressed immediately.</p>
+        </div>
+
+        <div class="subtopic">
+            <h2>End-Line Inspection</h2>
+            <p>As the production nears completion, an end-line inspection is conducted. This step ensures that the final product meets all quality standards before moving to the final stage.</p>
+        </div>
+
+        <div class="subtopic">
+            <h2>Final Inspection</h2>
+            <p>The final inspection is the last quality check before shipment. We thoroughly review the finished products to confirm they are defect-free and ready for delivery to our clients.</p>
+        </div>
+    </section>
+
+    <section class="images-section">
+        <h2>Inspection Process in Action</h2>
+        <div class="images-gallery">
+            <img src="quality3.jpg" alt="Pilot Run Inspection">
+            <img src="Inline inspection.jpg" alt="In-Line Inspection">
+            <img src="endlin.jpg" alt="End-Line Inspection">
+            <img src="Final-inspection.jpg" alt="Final Inspection">
+        </div>
+    </section>
+</div>
+
+
+
+
+
+
+</body>
+</html>
