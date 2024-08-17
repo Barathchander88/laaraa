@@ -58,7 +58,7 @@
             bottom: -10px;
             width: 50px;
             height: 4px;
-            background: #3498db;
+            /*background: #3498db;*/
             transform: translateX(-50%);
         }
 
@@ -355,10 +355,10 @@
 .inspection-section {
     width: 100%;
     max-width: 1200px;
-    margin: 10px auto;
+    margin: 20px auto;
     /*background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);*/
-    border-radius: 20px;
+    border-radius: 40px;
     padding: 10px;
 }
 
@@ -681,6 +681,134 @@
 
 
 
+
+/*factory certify*/
+.fc {
+    font-family: 'Arial', sans-serif;
+   /* background-color: #f4f4f4;*/
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.certifications-section {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+}
+
+.content-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.content-container h1 {
+    font-size: 32px;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.content-container p {
+    font-size: 18px;
+    color: #666666;
+    line-height: 1.6;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.certification-item {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 20px;
+}
+
+.certification-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.certification-item img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.certification-item h2 {
+    font-size: 24px;
+    color: #444444;
+    margin-bottom: 10px;
+}
+
+.certification-item p {
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .certifications-section {
+        padding: 20px;
+    }
+
+    .content-container h1 {
+        font-size: 28px;
+    }
+
+    .content-container p {
+        font-size: 16px;
+    }
+
+    .certification-item h2 {
+        font-size: 22px;
+    }
+
+    .certification-item p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .certifications-section {
+        padding: 15px;
+    }
+
+    .content-container h1 {
+        font-size: 24px;
+    }
+
+    .content-container p {
+        font-size: 14px;
+    }
+
+    .certification-item h2 {
+        font-size: 20px;
+    }
+
+    .certification-item p {
+        font-size: 13px;
+    }
+}
+
+
     </style>
 
     
@@ -724,7 +852,7 @@
         <h1>Our Services</h1>
 
         <div class="section">
-            <h2>Interactive Services</h2>
+            <h2>Interactive Services</h2><br>
             <div class="section-content">
                 <div class="card">
                     <div class="icon">🎨</div>
@@ -760,6 +888,7 @@
         </div>
 
         <div class="section">
+            <p><br><br></p>
             <h2>What We Offer</h2>
             <div class="section-content">
                 <div class="card">
@@ -924,6 +1053,31 @@
 </div>
 
 
+<div class="fc">
+    <section class="certifications-section">
+        <div class="content-container">
+            <h1>Factory Certifications</h1>
+            <p>We carefully select vendor factories based on compliance needs, including <strong>Wrap</strong>, <strong>Sedex</strong>, and <strong>Disney certifications</strong>, and ensure ongoing audits to meet client requirements.</p>
+        </div>
+        <div class="certifications-grid">
+            <div class="certification-item">
+                <img src="wrap-certification.jpg" alt="Wrap Certification">
+                <h2>Wrap Certification</h2>
+                <p>Wrap certification ensures that our factories comply with the highest ethical standards in areas such as health and safety, environmental practices, and fair labor conditions.</p>
+            </div>
+            <div class="certification-item">
+                <img src="sedex-certification.jpg" alt="Sedex Certification">
+                <h2>Sedex Certification</h2>
+                <p>Sedex certification signifies our commitment to responsible sourcing, focusing on labor rights, health and safety, the environment, and business ethics across our supply chain.</p>
+            </div>
+            <div class="certification-item">
+                <img src="disney-certification.jpg" alt="Disney Certification">
+                <h2>Disney Certification</h2>
+                <p>Our Disney certification reflects our adherence to stringent compliance standards that align with Disney’s social responsibility initiatives, ensuring ethical production practices.</p>
+            </div>
+        </div>
+    </section>
+</div>
 
 
 
