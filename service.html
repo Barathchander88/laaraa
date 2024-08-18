@@ -256,16 +256,16 @@
 
 /* our facilities*/
 
-/*
-.facilities-section {
-   /* width: 80%;*/
-    /*max-width: 1200px;*/
-   /* margin: 50px auto;*/
-   /* background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;*/
-    /*padding: 40px;*/
 
+.facilities-section {
+   width: 80%;
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 40px;
+}
 
 .facilities-section h1 {
     text-align: center;
@@ -546,141 +546,117 @@
 
 
 /* Header Styles */
-.hs{
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-}
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.sty {
-    background-color: black;
-    padding: 15px 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
 
-.mrs {
-    font-size: 24px;
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-}
+        /* Header Styles */
+        .header {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-.nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-}
+        .logo img {
+            height: 90px; /* Adjust this value to fit your design */
+            max-width: 100%;
+        }
 
-.nav li {
-    margin: 0 10px;
-}
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
 
-.nav li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 15px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
 
-/* Apply hover effect only on larger screens */
-@media (min-width: 769px) {
-    .nav li a:hover {
-        background-color: #ffdd57;
-        color: #007bff;
-    }
-}
+        .nav-links a:hover {
+            background-color: #ffdd57;
+            color: #333;
+            border-radius: 5px;
+        }
 
-/* Hamburger menu icon */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
 
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
-    transition: 0.4s;
-}
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
 
-/* Responsive Navigation */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 250px;
+                background-color: #333;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
 
-    .nav {
-        position: fixed;
-        top: 60px; /* Adjusted to avoid overlap with the header */
-        right: 0;
-        background-color: #007bff;
-        width: 100%;
-        max-width: 300px; /* Limit the width of the menu */
-        height: 100vh; /* Full viewport height */
-        flex-direction: column;
-        align-items: flex-start;
-        display: none;
-        overflow-y: auto; /* Allow scrolling if needed */
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Added shadow for better visibility */
-        transition: transform 0.3s ease; /* Smooth slide effect */
-        transform: translateX(100%); /* Initially hidden off-screen */
-    }
+            .nav-links.active {
+                transform: translateX(0);
+            }
 
-    .nav.active {
-        display: flex;
-        transform: translateX(0); /* Slide into view */
-    }
+            .hamburger {
+                display: flex;
+            }
 
-    .nav li {
-        width: 100%;
-        margin: 0;
-        text-align: left;
-    }
+            .nav-links a {
+                font-size: 20px;
+                padding: 15px;
+            }
 
-    .nav li a {
-        width: 100%;
-        padding: 15px;
-        text-align: left;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        color: white;
-        font-size: 18px; /* Adjust font size for better readability */
-        box-sizing: border-box;
-    }
+            .logo {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
 
-    .nav li a:hover {
-        background-color:beige;
-        color:black;
-    }
-}
+        @media (max-width: 480px) {
+            .logo img {
+                height: 60px; /* Adjust for smaller screens */
+            }
 
-@media (max-width: 480px) {
-    .logo {
-        font-size: 20px;
-    }
-
-    .nav li a {
-        font-size: 16px;
-        padding: 12px 15px;
-    }
-
-    .nav {
-        position: static;
-        max-width: none; /* Remove max-width limitation for smaller screens */
-    }
-}
+            .nav-links a {
+                font-size: 18px;
+                padding: 12px;
+            }
+        }
 
 
 
@@ -811,7 +787,236 @@
     }
 }
 
+   /* Footer Styles */
+   footer {
+    background-color: #f4f4f4;
+    padding: 20px;
+    color: #333;
+}
 
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 24px; /* Adjust icon size */
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #555;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.footer-bottom p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Scroll to Top Button Styles */
+#scrollToTopBtn {
+    display: none; /* Initially hidden */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above other content */
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555;
+}
+
+
+
+
+/*footer*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px; /* Adjust based on your logo size */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+/* Footer Styles */
+    /* Footer Styles */
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+    
+    .footer-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer-links li a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+    
+    .footer-links li a:hover {
+        color:red;
+    }
+    
+    .footer-contact {
+        text-align: right;
+    }
+    
+    .footer-contact p {
+        margin: 5px 0;
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid #444;
+        padding-top: 10px;
+        font-size: 14px;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .footer-content {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .footer-links {
+            margin-bottom: 20px;
+        }
+    
+        .footer-contact {
+            text-align: center;
+        }
+    }
+
+/* Scroll to Top Button Styles */
+#scrollToTopBtn {
+    display: none; /* Initially hidden */
+    position: fixed;
+    bottom: 80px; /* Adjust to be above the footer */
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above other content */
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        padding: 0;
+        text-align: center;
+    }
+
+    .footer-section a {
+        margin: 5px;
+    }
+}
     </style>
 
     
@@ -831,24 +1036,31 @@
             // Add 'selected' class to the clicked link
             event.target.classList.add('selected');
         }
+
+
+       
     </script>
 </head>
 <body>
-    
-    <div class="hs">
-        <header class="sty">
-            <div class="mrs">Logo</div>
-            <nav>
-                <ul class="nav">
-                   
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="about us.html">About Us</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Contacts</a></li>
-                </ul>
-            </nav>
-        </header>
-    </div>
+    <header class="header">
+        <div class="logo">
+            <img src="564.png" alt="Logo"> <!-- Replace 'your-logo.png' with the path to your logo image -->
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="service.html">Services</a>
+            <a href="product.html">Products</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="contactus.html">Contacts</a>
+        </nav>
+    </header>
+
+   
 
 
     <div class="section-container">
@@ -1091,7 +1303,29 @@
 </div>
 
 
+ <!-- Scroll to Top Button -->
+ <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
+ <footer>
+    <div class="footer-content">
+        <ul class="footer-links">
+            <li><a href="home.html">Home</a></li>
+            
+            <li><a href="service.html">Services</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="aboutus.html">about-us</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+        <div class="footer-contact">
+            <p>Email: info@laaraasourcingindia.com</p>
+            <p>Phone: +91 8122804385</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2024 laaraasourcingindia | Designed by HABARA SOLUTIONS
+    </div>
+</footer>
 
+ 
 </body>
 </html>

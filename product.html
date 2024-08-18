@@ -253,6 +253,115 @@
         padding: 12px;
     }
 }
+
+
+
+
+/* Footer Styles */
+    /* Footer Styles */
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+    
+    .footer-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer-links li a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+    
+    .footer-links li a:hover {
+        color:red;
+    }
+    
+    .footer-contact {
+        text-align: right;
+    }
+    
+    .footer-contact p {
+        margin: 5px 0;
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid #444;
+        padding-top: 10px;
+        font-size: 14px;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .footer-content {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .footer-links {
+            margin-bottom: 20px;
+        }
+    
+        .footer-contact {
+            text-align: center;
+        }
+    }
+
+/* Scroll to Top Button Styles */
+#scrollToTopBtn {
+    display: none; /* Initially hidden */
+    position: fixed;
+    bottom: 80px; /* Adjust to be above the footer */
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above other content */
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        padding: 0;
+        text-align: center;
+    }
+
+    .footer-section a {
+        margin: 5px;
+    }
+}
     </style>
 </head>
 <body>
@@ -267,10 +376,11 @@
             <div></div>
         </div>
         <nav class="nav-links">
+            <a href="home.html">Home</a>
             <a href="service.html">Services</a>
-            <a href="about-us.html">About Us</a>
-            <a href="#">Products</a>
-            <a href="#">Contacts</a>
+            <a href="product.html">Products</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="contactus.html">Contacts</a>
         </nav>
     </header>
 
@@ -281,8 +391,22 @@
                 <img src="Desktop - 9.png" alt="Product 1">
             </div>
             <div class="product-info">
-                <h2>Product 1</h2>
-                <p>Description of Product 1</p>
+                <h2>MEN</h2>
+              
+                
+                    <h5>Tshirt,
+                    Polos,
+                    Sweatshirt,
+                    Hoodies,
+                    Fleece jacket,
+                    Shorts,
+                    Joggers,
+                    Pyjamas,
+                    Underwear,
+                    Vest,
+                    Casual and Formal Woven Shirts,
+                    Woven pyjama<BR><BR></li>
+                                
                 <button class="toggle-samples">View Samples</button>
             </div>
             <div class="product-samples">
@@ -305,36 +429,144 @@
         <!-- Product 2 -->
         <div class="product-card">
             <div class="product-image">
-                <img src="product2.jpg" alt="Product 2">
+                <img src="Desktop - 10.png" alt="Product 2">
             </div>
             <div class="product-info">
-                <h2>Product 2</h2>
-                <p>Description of Product 2</p>
+                <h2>WOMEN</h2>
+                <h5>Tshirt, Pyjama, Sweatshirt, Hoodie, Fleece jacket, Long nightwear’s, Knitted Tops, Leggings, Nightwear, Woven tops, Woven pyjamas, Woven Dress</h5>
+               
                 <button class="toggle-samples">View Samples</button>
             </div>
             <div class="product-samples">
-                <img src="mens/Frame 62.jpg" alt="Sample 1-5">
-                <img src="sample2-1.jpg" alt="Sample 2-1">
-                <img src="sample2-2.jpg" alt="Sample 2-2">
+                <img src="womens/Frame 85.jpg" alt="Sample 1-5">
+                <img src="womens/Frame 86.jpg" alt="Sample 1-5">
+                <img src="womens/Frame 87.jpg" alt="Sample 1-5">
+                <img src="womens/Frame 88.jpg" alt="Sample 1-5">
+                <img src="womens/Frame 89.jpg" alt="Sample 1-5">
+                <img src="womens/Frame 90.jpg" alt="Sample 1-5">
+                <img src="womens/Frame 91.jpg" alt="Sample 1-5">
+                <img src="womens/Frame 92.jpg" alt="Sample 1-5">
+                <img src="womens/Frame 93.jpg" alt="Sample 1-5">
+                <img src="womens/Frame 94.jpg" alt="Sample 1-5">
+                <img src="womens/Frame 95.jpg" alt="Sample 1-5">
+                <img src="womens/Frame 96.jpg" alt="Sample 1-5">
+                <img src="womens/Frame 97.jpg" alt="Sample 1-5">
+               
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="product-image">
+                <img src="banners/Desktop - 11.png" alt="Product 3">
+            </div>
+            <div class="product-info">
+                <h2>JUNIORS</h2>
+                <h5>Tshirt,
+                    Polos,
+                    Sweatshirt,
+                    Hoodies,
+                    Fleece jacket,
+                    Shorts,
+                    Joggers,
+                    Pyjamas,
+                    Underwear,
+                    Vest,
+                    Casual and Formal Woven Shirts,
+                    Woven pyjama<BR><BR></li>
+                <button class="toggle-samples">View Samples</button>
+            </div>
+            <div class="product-samples">
+                <img src="JUNIORS/Frame 45.jpg" alt="Sample 3-1">
+                <img src="JUNIORS/Frame 46.jpg" alt="Sample 3-1">
+                <img src="JUNIORS/Frame 47.jpg" alt="Sample 3-1">
+                <img src="JUNIORS/Frame 48.jpg" alt="Sample 3-1">
+                <img src="JUNIORS/Frame 49.jpg" alt="Sample 3-1">
+                <img src="JUNIORS/Frame 50.jpg" alt="Sample 3-1">
+                <img src="JUNIORS/Frame 51.jpg" alt="Sample 3-1">
+                <img src="JUNIORS/Frame 52.jpg" alt="Sample 3-1">
+                <img src="JUNIORS/Frame 53.jpg" alt="Sample 3-1">
+                <img src="JUNIORS/Frame 54.jpg" alt="Sample 3-1">
+                <img src="JUNIORS/Frame 55.jpg" alt="Sample 3-1">
+                <img src="JUNIORS/Frame 56.jpg" alt="Sample 3-1">
+                <img src="JUNIORS/Frame 57.jpg" alt="Sample 3-1">
+                
             </div>
         </div>
     
         <!-- Product 3 -->
         <div class="product-card">
             <div class="product-image">
-                <img src="product3.jpg" alt="Product 3">
+                <img src="banners/Desktop - 12.png" alt="Product 3">
             </div>
             <div class="product-info">
-                <h2>Product 3</h2>
-                <p>Description of Product 3</p>
+                <h2>GIRLS</h2>
+               
+                <h5>Tshirt, Sweatshirt, Hoodie, Camisoles, Leggings, Play suits, Jumpsuits, Knitted skirts, Shorts, Joggers, Nightwear’s, Pyjamas sets, Woven dress, Woven skirts</h5>
                 <button class="toggle-samples">View Samples</button>
             </div>
             <div class="product-samples">
-                <img src="sample3-1.jpg" alt="Sample 3-1">
-                <img src="sample3-2.jpg" alt="Sample 3-2">
+                <img src="GIRLS/Frame 44.jpg" alt="Sample 3-1">
+                <img src="GIRLS/Frame 71.jpg" alt="Sample 3-1">
+                <img src="GIRLS/Frame 72.jpg" alt="Sample 3-1">
+                <img src="GIRLS/Frame 73.jpg" alt="Sample 3-1">
+                <img src="GIRLS/Frame 74.jpg" alt="Sample 3-1">
+                <img src="GIRLS/Frame 75.jpg" alt="Sample 3-1">
+                <img src="GIRLS/Frame 76.jpg" alt="Sample 3-1">
+                <img src="GIRLS/Frame 77.jpg" alt="Sample 3-1">
+                <img src="GIRLS/Frame 78.jpg" alt="Sample 3-1">
+                <img src="GIRLS/Frame 79.jpg" alt="Sample 3-1">
+                <img src="GIRLS/Frame 80.jpg" alt="Sample 3-1">
+                <img src="GIRLS/Frame 81.jpg" alt="Sample 3-1">
+                <img src="GIRLS/Frame 82.jpg" alt="Sample 3-1">
+                <img src="GIRLS/Frame 83.jpg" alt="Sample 3-1">
+                <img src="GIRLS/Frame 84.jpg" alt="Sample 3-1">
+                
             </div>
         </div>
-    
+        
+        <div class="product-card">
+            <div class="product-image">
+                <img src="banners/Desktop - 13.png" alt="Product 3">
+            </div>
+            <div class="product-info">
+                <h2>NEW BORN BABY</h2>
+                <h5>Underwear, Rompers, Chemise/Camisoles, Jumpsuits, Tshirts, Socks, Knitted top and bottom sets, Pyjama sets</h5>
+                <button class="toggle-samples">View Samples</button>
+            </div>
+            <div class="product-samples">
+                <img src="NBY/Frame 98.jpg" alt="Sample 3-1">
+                <img src="NBY/Frame 99.jpg" alt="Sample 3-1">
+                <img src="NBY/Frame 100.jpg" alt="Sample 3-1">
+                <img src="NBY/Frame 113.jpg" alt="Sample 3-1">
+                <img src="NBY/Frame 102.jpg" alt="Sample 3-1">
+                <img src="NBY/Frame 103.jpg" alt="Sample 3-1">
+                <img src="NBY/Frame 104.jpg" alt="Sample 3-1">
+                <img src="NBY/Frame 106.jpg" alt="Sample 3-1">
+                <img src="NBY/Frame 105.jpg" alt="Sample 3-1">
+               
+                
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="banners/Desktop - 14.png" alt="Product 3">
+            </div>
+            <div class="product-info">
+                <h2>SOCKS</h2>
+                <h5>Ankle Socks, Crew Length Socks, Mid-Calf Length Socks, Knee High Socks, Over-the-Knee Socks, Thigh High Socks.</h5>
+                <button class="toggle-samples">View Samples</button>
+            </div>
+            <div class="product-samples">
+                <img src="socks/Frame 107.jpg" alt="Sample 3-1">
+                <img src="socks/Frame 108.jpg" alt="Sample 3-1">
+                <img src="socks/Frame 109.jpg" alt="Sample 3-1">
+                <img src="socks/Frame 110.jpg" alt="Sample 3-1">
+                <img src="socks/Frame 111.jpg" alt="Sample 3-1">
+                <img src="socks/Frame 112.jpg" alt="Sample 3-1">
+               
+            </div>
+        </div>
+        
         <!-- Add more products as needed -->
     </section>
 
@@ -345,6 +577,30 @@
             <img id="img01" alt="Enlarged Sample Image">
         </div>
     </div>
+
+
+
+
+    
+<footer>
+    <div class="footer-content">
+        <ul class="footer-links">
+            <li><a href="home.html">Home</a></li>
+            
+            <li><a href="service.html">Services</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="aboutus.html">About-us</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+        <div class="footer-contact">
+            <p>Email: info@laaraasourcingindia.com</p>
+            <p>Phone: +91 8122804385</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2024 laaraasourcingindia | Designed by HABARA SOLUTIONS
+    </div>
+</footer>
 
     <script>
     

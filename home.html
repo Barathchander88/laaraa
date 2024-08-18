@@ -837,6 +837,114 @@ body {
     text-decoration: underline;
 } */
 
+
+
+
+/* Footer Styles */
+    /* Footer Styles */
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+    
+    .footer-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer-links li a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+    
+    .footer-links li a:hover {
+        color:red;
+    }
+    
+    .footer-contact {
+        text-align: right;
+    }
+    
+    .footer-contact p {
+        margin: 5px 0;
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid #444;
+        padding-top: 10px;
+        font-size: 14px;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .footer-content {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .footer-links {
+            margin-bottom: 20px;
+        }
+    
+        .footer-contact {
+            text-align: center;
+        }
+    }
+
+/* Scroll to Top Button Styles */
+#scrollToTopBtn {
+    display: none; /* Initially hidden */
+    position: fixed;
+    bottom: 80px; /* Adjust to be above the footer */
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above other content */
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        padding: 0;
+        text-align: center;
+    }
+
+    .footer-section a {
+        margin: 5px;
+    }
+}
     </style>
 </head>
 <body>
@@ -851,8 +959,8 @@ body {
             <a href="home.html">Home</a>
             <a href="service.html">Services</a>
             <a href="product.html">Products</a>
-            <a href="about-us.html">About Us</a>
-            <a href="#">Contacts</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="contactus">Contacts</a>
         </nav>
     </header>
 
@@ -984,29 +1092,25 @@ body {
 
 
 <footer>
-    <div class="footer-container">
-        <div class="footer-logo">
-            <img src="Frame1.png" alt="Laaraa Sourcing India Logo">
-        </div>
-        <div class="footer-links">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="product.html">product</a></li>
-                <li><a href="about us.html">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-        <div class="footer-social">
-            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    <div class="footer-content">
+        <ul class="footer-links">
+            <li><a href="home.html">Home</a></li>
+            
+            <li><a href="service.html">Services</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="aboutus.html">About-us</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+        <div class="footer-contact">
+            <p>Email: info@laaraasourcingindia.com</p>
+            <p>Phone: +91 8122804385</p>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2024 Laaraa Sourcing India. All rights reserved.</p>
+        &copy; 2024 laaraasourcingindia | Designed by HABARA SOLUTIONS
     </div>
 </footer>
+
 <script>
 function toggleMenu() {
     document.querySelector('.nav-links').classList.toggle('active');
