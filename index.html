@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAARAA SOURCING INDIA BY HABARA SOLUTIONS</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            color: white; /* Ensures all text is visible against the background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: black;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('index.jpg'); /* Path to your uploaded image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.6; /* Adjust opacity as needed */
+            z-index: -1;
+        }
+
+        .content-wrapper {
+            z-index: 1;
+            max-width: 80%;
+        }
+
+        header {
+            animation: fadeInDown 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .main-content {
+            animation: fadeInUp 1.5s ease-in-out;
+            animation-delay: 1s;
+            animation-fill-mode: both;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        button {
+            background-color: #254343;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button a {
+            text-decoration: none;
+            color: white; /* Ensures the text is visible without the underline */
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #6a11cb;
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                max-width: 90%;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            header h2 {
+                font-size: 20px;
+            }
+
+            .main-content h3 {
+                font-size: 18px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 20px;
+            }
+
+            header h2 {
+                font-size: 18px;
+            }
+
+            .main-content h3 {
+                font-size: 16px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="content-wrapper">
+        <div class="background"></div>
+        <header>
+            <h1>Welcome to </h1>
+            <h2>LAARAA SOURCING INDIA</h2>
+        </header>
+
+        <section class="main-content">
+            <h3>Your premier destination for streamlined apparel sourcing solutions.<br> 
+                At LAARAA, we specialize in connecting you with India’s finest manufacturers to bring your fashion visions to life.
+            </h3>
+            <button id="button">
+                <a href="home.html">EXPLORE🌍</a>
+            </button>
+        </section>
+    </div>
+
+</body>
+</html>
